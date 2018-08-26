@@ -6,8 +6,11 @@ import { createContext, Context } from '../lutterjs/lutter';
 class ParentProvider extends Component {
 
   componentDidMount() {
-    createContext(Context, 'Simple String', 'MY_CONTEXT_TYPE');
-    createContext(Context, 'another String', 'MY_OTHER_CONTEXT_TYPE');
+    /* This is how we create a context
+    createContext(Context.value, 'Simple String', 'MY_CONTEXT_TYPE');
+    createContext(Context.value, 'another String', 'MY_OTHER_CONTEXT_TYPE');
+    createContext(Context.value, 'Replacing String', 'MY_CONTEXT_TYPE');
+    */
   }
 
   render() {

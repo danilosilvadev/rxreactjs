@@ -1,7 +1,7 @@
 {
-  "name": "lutter-sample",
-  "version": "0.1.0",
-  "private": true,
+  "name": "lutterjs",
+  "version": "0.0.1",
+  "private": false,
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

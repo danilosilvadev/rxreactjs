@@ -3,10 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 
 export const Context = new BehaviorSubject({});
 
-
-// Next step is to add prevContext into the new without overriding
 export function createContext(prevContext, context, type) {
-  Context.next({...prevContex.get,  [type]: context });
+  Context.next({...prevContext,  [type]: context });
 };
 
 export const mapContextToProps = (ComposedComponent, Cont) => (
