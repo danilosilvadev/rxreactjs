@@ -3,11 +3,11 @@ import { BehaviorSubject } from 'rxjs';
 
 export const Context = new BehaviorSubject({});
 
-export function createContext(prevContext, context, type) {
-  Context.next({...prevContext,  [type]: context });
+export function createContext(type, context) {
+  Context.next({...Context.value,  [type]: context });
 };
 
-export const mapContextToProps = (ComposedComponent, Cont) => (
+export const mapContextToProps = (ComposedComponent) => (
   class HOC extends Component {
     constructor(){
       super();
@@ -16,7 +16,11 @@ export const mapContextToProps = (ComposedComponent, Cont) => (
       }
     }
     componentDidMount() {
-      Cont.subscribe({next: v => this.setState({ context: v})})
+      Context.subscribe({next: v => this.setState({ context: v})})
+    }
+
+    componentWillUnmount(){
+      Context.unsubscribe();
     }
 
     render() {

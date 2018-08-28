@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import Inner from './Inner';
 import Outter from './Outter';
-import { createContext, Context } from '../lutterjs/lutter';
+import { createContext } from '../rxreactjs/rxreact';
 
 class ParentProvider extends Component {
 
   componentDidMount() {
-    /* This is how we create a context
-    createContext(Context.value, 'Simple String', 'MY_CONTEXT_TYPE');
-    createContext(Context.value, 'another String', 'MY_OTHER_CONTEXT_TYPE');
-    createContext(Context.value, 'Replacing String', 'MY_CONTEXT_TYPE');
-    */
+    createContext('MY_CONTEXT_TYPE', 'Simple String');
+    createContext('MY_OTHER_CONTEXT_TYPE', 'another String');
+    createContext('MY_CONTEXT_TYPE', 'Replacing String');
+    createContext('MY_CONTEXT_TYPE', this.MountContext());
+  }
+
+  MountContext() {
+    return 'string';
   }
 
   render() {
     return (
       <div>
-        <Inner />
         <Outter />
       </div>
     );
