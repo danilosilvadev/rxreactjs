@@ -16,11 +16,10 @@ export const mapContextToProps = (ComposedComponent) => (
       }
     }
     componentDidMount() {
-      Context.subscribe({next: v => this.setState({ context: v})})
+      this.subscription = Context.subscribe({next: v => this.setState({ context: v})});
     }
-
-    componentWillUnmount(){
-      Context.unsubscribe();
+    componentWillUnMount() {
+      this.subscription.unsubscribe();
     }
 
     render() {
