@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI tests should render OutterUsingContext correctly 1`] = `null`;
+
+exports[`UI tests should render OutterUsingStore correctly 1`] = `null`;
+
+exports[`UI tests should render Provider correctly 1`] = `
+Array [
+  <div>
+    <div>
+        A data coming from fetching
+    </div>
+    <button
+        onClick={[Function]}
+    >
+        Change the data
+    </button>
+</div>,
+  <div>
+    <div>
+        A data coming from fetching
+    </div>
+    <button
+        onClick={[Function]}
+    >
+        Change the data
+    </button>
+</div>,
+]
+`;

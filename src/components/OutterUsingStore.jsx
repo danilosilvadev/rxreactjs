@@ -20,4 +20,4 @@ function OutterUsingStore(props) {
 }
 
 // This is how we inject it
-export default mapStoreToProps(OutterUsingStore, 'MY_CONTEXT');
+export default mapStoreToProps(OutterUsingStore);
