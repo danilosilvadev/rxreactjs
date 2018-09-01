@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import Outter from './Outter';
-import { createContext } from '../rxreactjs/rxreact';
+import { createContext } from '../rxreactjs';
+import OutterUsingContext from './OutterUsingContext';
+import OutterUsingStore from './OutterUsingStore';
 
 class ParentProvider extends Component {
-
-  componentDidMount() {
-    createContext('MY_CONTEXT_TYPE', 'Simple String');
-    createContext('MY_OTHER_CONTEXT_TYPE', 'another String');
-    createContext('MY_CONTEXT_TYPE', 'Replacing String');
-    createContext('MY_CONTEXT_TYPE', this.MountContext());
+  constructor() {
+    super();
+    this.state = {
+      someData: null,
+    };
+    this.actions = {
+      changeSomeData: this.handleChange = this.handleChange.bind(this),
+    };
   }
 
-  MountContext() {
-    return 'string';
+componentDidMount() {
+    this.setState({ someData: 'A data coming from fetching' });
+  }
+
+  componentDidUpdate() {
+    createContext('MY_CONTEXT', this.state, this.actions);
+  }
+
+handleChange() {
+    this.setState({ someData: 'some data changed by action'});
   }
 
   render() {
     return (
-      <div>
-        <Outter />
-      </div>
+      <React.Fragment>
+        <OutterUsingContext />
+        <OutterUsingStore />
+      </React.Fragment>
     );
   }
 }

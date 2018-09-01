@@ -1,1 +1,1 @@
-export { Context, createContext, mapContextToProps } from './src/lutterjs/lutter';
+export { createContext, mapContextToProps, mapStoreToProps } from './src/rxreactjs';
