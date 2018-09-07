@@ -4,7 +4,7 @@ RxReactJS is a new way of create a single source of truth without use redux, mob
 
 ### Installation:
 
-The installation is not available yet, due to build problems, if someone wants to help just make a PR and your name will be cited in this readme. To test and use this package, you just need to copy the folder rxreactjs at src in your react project and install rxjs via npm for now, but soon my npm module will be ready to easy installation.
+`npm i rxjs rxreactjs`
 
 ### Usage:
 
@@ -14,6 +14,9 @@ Ex:
 
 ```js
 //Provider.js
+import React, { Component } from 'react';
+import { createContext } from 'rxreactjs';
+
 class Provider extends Component {
   constructor() {
     super();
