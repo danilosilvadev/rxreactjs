@@ -1,6 +1,6 @@
 # RxReactJS
 
-RxReactJS is a new way of create a single source of truth without use redux, mobx or some of those well knew alternatives. It just uses rxjs plus high order components to compose your single state observable. To use it is not required to know rxjs, you just call 2 functions(one to share data, and another to receive) and that is it.
+RxReactJS is a new way of creating a single source of truth without using redux, mobx or some of those well-known alternatives. It uses rxjs plus high order components to compose your single state observable. To use it is not required to know rxjs, you just need to call 2 functions (one to share data, and another to receive it) and that's it.
 
 ### Installation:
 
@@ -113,3 +113,9 @@ function OutterUsingStore(props) {
 // This is how we inject it
 export default mapStoreToProps(OutterUsingStore);
 ```
+
+### Test coverage
+
+It is 100% tested :D
+
+`npm run test`
